@@ -1,0 +1,9 @@
+<template name="ingredientList">
+    {{#each ingredient in this.ingredients}}
+        <div class="row">
+            <h5>{{ingredient.name}} - {{ingredient.type}}</h5> 
+        </div>
+    {{else}}
+        <h5>no ingredients saved</h5>
+    {{/each}}
+</template>

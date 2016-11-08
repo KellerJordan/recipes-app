@@ -1,0 +1,30 @@
+<template name="newRecipeForm">
+	<form id="js-new-recipe-form" class="col">
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="name-field" type="text">
+				<label for="name-field">Name</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<textarea id="description-field" class="materialize-textarea"></textarea>
+				<label for="description-field">Description</label>
+			</div>
+		</div>
+		{{#each ingredientIndex in ingredientCount}}
+			<div class="row">
+				<div class="input-field col s7">
+					{{> ingredientSelect (ingredientSelectArgs)}}
+					<label>Ingredient #{{ingredientIndex}}</label>
+				</div>
+				<div class="input-field col s5">
+					<input class="amount-field" type="number">
+					<label>Amount</label>
+				</div>
+			</div>
+		{{/each}}
+		<a href="" id="js-add-ingredient" class="btn">+</a>
+		<input type="submit" class="btn">
+	</form>
+</template>

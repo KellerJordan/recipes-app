@@ -1,0 +1,21 @@
+<template name="newIngredientForm">
+	<form id="js-new-ingredient-form" class="col">
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="name-field" type="text">
+				<label for="name-field">Name</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<select>
+                    {{#each type in ingredientTypes}}
+                        <option value={{type}}>{{type}}</option>
+                    {{/each}}
+                </select>
+				<label>Type</label>
+			</div>
+		</div>
+		<input type="submit" class="btn">
+	</form>
+</template>

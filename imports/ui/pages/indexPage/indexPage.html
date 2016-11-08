@@ -1,0 +1,26 @@
+<template name="indexPage">
+	<div class="row">
+		<div class="col m6">
+			<h3>Ingredients</h3>
+			{{> ingredientList (ingredientListArgs)}}
+			<a id="js-new-ingredient-modal-trigger" href="" data-target="new-ingredient-modal" class="btn">new ingredient</a>
+		</div>
+		<div class="col m6">
+			<h3>Recipes</h3>
+			{{> recipeList (recipeListArgs)}}
+			<a id="js-new-recipe-modal-trigger" href="" data-target="new-recipe-modal" class="btn">new recipe</a>
+		</div>
+	</div>
+	<div id="new-ingredient-modal" class="modal">
+		<div class="modal-content">
+			<h4>Add a New Ingredient</h4>
+			{{> newIngredientForm}}
+		</div>
+	</div>
+	<div id="new-recipe-modal" class="modal">
+		<div class="modal-content">
+			<h4>Add a New Recipe</h4>
+			{{> newRecipeForm (newRecipeFormArgs)}}
+		</div>
+	</div>
+</template>
