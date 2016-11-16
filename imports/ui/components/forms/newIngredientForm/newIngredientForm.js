@@ -19,8 +19,12 @@ Template.newIngredientForm.helpers({
 
 Template.newIngredientForm.events({
     'submit #js-new-ingredient-form'(event) {
-        // instantiate ingredient with form values from event.target
-        const ingredient = {};
-        insertIngredient(ingredient);
+        let form = event.target;
+        const ingredient = {
+        	name: form['name-field'].value,
+        	type: form['type-field'].value
+        };
+        insertIngredient.call(ingredient);
+        return false;
     },
 });

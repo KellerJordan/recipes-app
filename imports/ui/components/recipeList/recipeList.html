@@ -1,6 +1,9 @@
 <template name="recipeList">
-    {{#each recipe in this.recipes}}
-    {{else}}
-        <h5>no recipes saved</h5>
-    {{/each}}
+	{{#each recipe in this.recipes}}
+		<div class="row">
+			<a href="/recipe/{{recipe._id}}"><h5>{{recipe.name}}</h5></a>
+		</div>
+	{{else}}
+		<h5>no recipes saved</h5>
+	{{/each}}
 </template>

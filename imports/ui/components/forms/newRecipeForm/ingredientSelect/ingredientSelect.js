@@ -5,5 +5,5 @@ import 'meteor/materialize:materialize';
 import './ingredientSelect.html';
 
 Template.ingredientSelect.onRendered(function () {
-    $('select').material_select();
+  $('select').material_select();
 });

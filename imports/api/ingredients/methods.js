@@ -6,9 +6,6 @@ export const insertIngredient = new ValidatedMethod({
     validate: new SimpleSchema(Ingredients.schema).validator(),
 
     run({ name, type }) {
-        // TODO:
-        // complete this function so that it inserts a new 
-        // ingredient and returns its id
-        return;
+        return Ingredients.insert({ name, type });
     },
 });

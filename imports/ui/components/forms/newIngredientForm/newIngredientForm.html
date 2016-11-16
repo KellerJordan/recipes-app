@@ -8,11 +8,11 @@
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
-				<select>
-                    {{#each type in ingredientTypes}}
-                        <option value={{type}}>{{type}}</option>
-                    {{/each}}
-                </select>
+				<select id="type-field">
+          {{#each type in ingredientTypes}}
+            <option value={{type}}>{{type}}</option>
+          {{/each}}
+        </select>
 				<label>Type</label>
 			</div>
 		</div>

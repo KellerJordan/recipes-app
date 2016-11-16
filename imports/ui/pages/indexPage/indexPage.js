@@ -25,10 +25,18 @@ Template.indexPage.onRendered(function () {
 });
 
 Template.indexPage.helpers({
-    ingredientListArgs() {},
-    recipeListArgs() {},
+    ingredientListArgs() {
+        const ingredients = Ingredients.find({});
+        return { ingredients };
+    },
+
+    recipeListArgs() {
+        const recipes = Recipes.find({});
+        return { recipes };
+    },
+
     newRecipeFormArgs() {
-        const ingredients = Ingredients.find({}).fetch();
+        const ingredients = Ingredients.find({});
         return { ingredients };
     },
 });

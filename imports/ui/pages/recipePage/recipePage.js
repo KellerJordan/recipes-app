@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Router } from 'meteor/iron:router';
 import { $ } from 'meteor/jquery';
+import _ from 'lodash';
 
 import { Ingredients } from '/imports/api/ingredients/ingredients.js';
 import { Recipes } from '/imports/api/recipes/recipes.js';
@@ -20,6 +21,10 @@ Template.recipePage.onCreated(function () {
 Template.recipePage.helpers({
     recipeDetailsArgs() {
         const recipe = Recipes.findOne();
-        const ingredients = Ingredients.find().fetch();
+        const ingredients = _.map(Ingredients.find().fetch(), val => {
+            val.amount = _.find(recipe.ingredientList, { 'ingredientId': val._id }).amount;
+            return val;
+        });
+        return { recipe, ingredients };
     },
 });

@@ -1,7 +1,7 @@
 <template name="ingredientSelect">
 	<select id="ingredient-select">
-        {{#each ingredient in this.ingredients}}
-		    <option value={{ingredient._id}}>{{ingredient.name}}</option>
-        {{/each}}
-    </select>
+    {{#each ingredient in ingredients}}
+	    <option value={{ingredient._id}}>{{ingredient.name}}</option>
+    {{/each}}
+  </select>
 </template>
